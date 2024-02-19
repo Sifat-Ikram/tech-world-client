@@ -56,7 +56,7 @@ const SignIn = () => {
             <div className="my-10">
                 <div className="w-3/4 mx-auto">
                     <div className="w-2/3 mx-auto gap-8">
-                        <div className="flex-1 text-center py-10 bg-[#0845F4] w-full">
+                        <div className="flex-1 text-center py-10 bg-[#0F1BB2] w-full">
                             <h1 className="text-5xl font-bold text-white">Sign in here!</h1>
                         </div>
                         <form onSubmit={handleSubmit(onSubmit)} className='w-4/5 mx-auto space-y-7'>
@@ -83,7 +83,7 @@ const SignIn = () => {
                             <h1>Don't have an account yet, <a className='text-blue-700' href='/signUp'>Sign up</a> here</h1>
                         </form>
                         <div className='flex justify-center items-center mt-5'>
-                            <button onClick={handleGoogleRegister} className='w-4/5 mx-auto btn btn-outline hover:text-white border-[#0845F4] hover:bg-[#0845F4]'><FaGoogle></FaGoogle> Sign in</button>
+                            <button onClick={handleGoogleRegister} className='w-4/5 mx-auto btn btn-outline hover:text-white border-[#0F1BB2] hover:bg-[#0F1BB2]'><FaGoogle></FaGoogle> Sign in</button>
                         </div>
                     </div>
                 </div>
