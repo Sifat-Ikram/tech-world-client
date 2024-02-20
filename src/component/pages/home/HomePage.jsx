@@ -1,9 +1,12 @@
+import Banner from "./banner/Banner";
+import Product from "./product/Product";
 
 
 const HomePage = () => {
     return (
-        <div>
-          <h1>homePage page</h1>  
+        <div className="space-y-8">
+            <Banner />
+            <Product />
         </div>
     );
 };
