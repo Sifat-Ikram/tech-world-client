@@ -8,7 +8,7 @@ const Header = () => {
         <li><a className='uppercase rounded-md' href={'/'}>HOME</a></li>
         <li><a className='uppercase rounded-md' href={'/addProduct'}>Add Product</a></li>
         {
-            user && <li><a className='uppercase rounded-md' href={'/myCart'}>myCart</a></li>
+            user && <li><a className='uppercase rounded-md' href={'/myCart'}>My Cart</a></li>
         }
         <li><a className='uppercase rounded-md' href={'/contact'}>CONTACT US</a></li>
         <li><a className='uppercase rounded-md' href={'/about'}>About Us</a></li>
@@ -26,9 +26,9 @@ const Header = () => {
     }
 
     return (
-        <div>
+        <div className='w-11/12 py-5 mx-auto'>
             <div className="flex items-center w-full">
-                <div className="navbar-start">
+                <div className="navbar-start flex items-center">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

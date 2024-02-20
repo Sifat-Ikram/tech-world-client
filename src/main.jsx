@@ -15,6 +15,10 @@ import HomePage from './component/pages/home/HomePage.jsx';
 import SignUp from './component/pages/sign/SignUp.jsx';
 import SignIn from './component/pages/sign/SignIn.jsx';
 import AuthProvider from './component/provider/AuthProvider.jsx';
+import ProductDetails from './component/pages/details/ProductDetails.jsx'
+import MyCart from './component/pages/cart/MyCart.jsx'
+import UpdatePage from './component/pages/update/UpdatePage.jsx'
+import AddProduct from './component/pages/addProduct/AddProduct.jsx'
 const queryClient = new QueryClient()
 
 
@@ -35,6 +39,22 @@ const router = createBrowserRouter([
       {
         path: "/signIn",
         element: <SignIn />
+      },
+      {
+        path: "/details/:id",
+        element: <ProductDetails />
+      },
+      {
+        path: "/myCart",
+        element: <MyCart />
+      },
+      {
+        path: "/update/:id",
+        element: <UpdatePage />
+      },
+      {
+        path: "/addProduct",
+        element: <AddProduct />
       }
     ]
   },

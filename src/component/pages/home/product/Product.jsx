@@ -8,16 +8,14 @@ const Product = () => {
     const { data: products = [] } = useQuery({
         queryKey: ['products.id'],
         queryFn: async () => {
-            const res = await axiosPublic.get('http://localhost:4321/service');
+            const res = await axiosPublic.get('/service');
             return res.data;
         },
         onError: (error) => {
-            // Handle error (e.g., show an error message)
             console.error("Error fetching data:", error);
         }
     })
 
-    console.log(products);
 
     if (!products.length) {
         return <span className="loading loading-dots loading-lg"></span>;
