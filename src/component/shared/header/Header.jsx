@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { SiAudiotechnica } from "react-icons/si";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -10,7 +11,6 @@ const Header = () => {
         {
             user && <li><a className='uppercase rounded-md' href={'/myCart'}>My Cart</a></li>
         }
-        <li><a className='uppercase rounded-md' href={'/contact'}>CONTACT US</a></li>
         <li><a className='uppercase rounded-md' href={'/about'}>About Us</a></li>
         {
             !user && <li><a className='uppercase rounded-md' href={'/signUp'}>Sign up</a></li>
@@ -28,7 +28,7 @@ const Header = () => {
     return (
         <div className='w-11/12 py-5 mx-auto'>
             <div className="flex items-center w-full">
-                <div className="navbar-start flex items-center">
+                <div className="flex items-center md:gap-5 navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -37,8 +37,9 @@ const Header = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="mr-10 text-left cursor-pointer" href='/'>
-                        <h1 className='font-lato text-[#0F1BB2] text-5xl font-extrabold uppercase italic'>TechWorld</h1>
+                    <a className="flex items-center justify-center gap-2 mr-10 text-left cursor-pointer" href='/'>
+                        <SiAudiotechnica className='md:text-3xl lg:text-5xl' />
+                        <h1 className='font-lato text-[#0F1BB2] text-xs md:text-3xl lg:text-5xl font-extrabold uppercase italic'>TechWorld</h1>
                     </a>
                 </div>
                 <div className="hidden navbar-center lg:flex">

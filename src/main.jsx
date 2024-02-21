@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import PrivateRouter from "./component/privateRouter/PrivateRouter.jsx"
 import ErrorPage from './component/pages/errorPage/ErrorPage.jsx';
 import HomePage from './component/pages/home/HomePage.jsx';
 import SignUp from './component/pages/sign/SignUp.jsx';
@@ -19,6 +20,7 @@ import ProductDetails from './component/pages/details/ProductDetails.jsx'
 import MyCart from './component/pages/cart/MyCart.jsx'
 import UpdatePage from './component/pages/update/UpdatePage.jsx'
 import AddProduct from './component/pages/addProduct/AddProduct.jsx'
+import About from './component/pages/about/About.jsx'
 const queryClient = new QueryClient()
 
 
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <ProductDetails />
+        element:<PrivateRouter><ProductDetails /></PrivateRouter>
       },
       {
         path: "/myCart",
@@ -54,7 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element: <AddProduct />
+        element: <PrivateRouter><AddProduct /></PrivateRouter>
+      },
+      {
+        path: "/about",
+        element: <About />
       }
     ]
   },
