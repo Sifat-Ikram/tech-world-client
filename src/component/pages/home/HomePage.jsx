@@ -4,16 +4,18 @@ import Choosing from "./choosing/Choosing";
 import Product from "./product/Product";
 import JoinUs from "./join/JoinUs"
 import TopBrands from "./Brands/TopBrands";
+import Review from "./review/Review";
 
 const HomePage = () => {
     return (
         <div className="space-y-8">
             <Banner />
             <Product />
+            <TopBrands />
             <Choosing />
             <ChooseUs />
             <JoinUs />
-            <TopBrands />
+            <Review />
         </div>
     );
 };

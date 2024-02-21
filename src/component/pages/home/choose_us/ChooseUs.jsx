@@ -6,7 +6,7 @@ const ChooseUs = () => {
         <div>
             <h1 className='lg:text-4xl md:text-2xl text-sm font-bold text-center'>Our services</h1>
             <div className='grid gap-3 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 my-10'>
-            <div className="flex space-x-4 p-3 hover:cursor-pointer rounded-md items-center border-2 border-solid text-white bg-[#0F1BB2]">
+            <div className="flex space-x-4 p-3 hover:cursor-pointer rounded-md items-center border-2 border-[#0F1BB2] order-solid">
                 <div>
                     <TbTruckDelivery className='text-6xl'></TbTruckDelivery>
                 </div>
@@ -15,7 +15,7 @@ const ChooseUs = () => {
                     <p>Free shipping on all orders</p>
                 </div>
             </div>
-            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid rounded-md text-white bg-[#0F1BB2]'>
+            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid border-[#0F1BB2] rounded-md'>
                 <div>
                     <FcOnlineSupport className='text-6xl'></FcOnlineSupport>
                 </div>
@@ -24,7 +24,7 @@ const ChooseUs = () => {
                     <p>Online Support 24 hours</p>
                 </div>
             </div>
-            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid rounded-md text-white bg-[#0F1BB2]'>
+            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid border-[#0F1BB2] rounded-md'>
                 <div>
                     <FcMoneyTransfer className='text-6xl'></FcMoneyTransfer>
                 </div>
@@ -33,7 +33,7 @@ const ChooseUs = () => {
                     <p>Money back guarantee under 7 days</p>
                 </div>
             </div>
-            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid rounded-md text-white bg-[#0F1BB2]'>
+            <div className='flex space-x-4 p-3 hover:cursor-pointer items-center border-2 border-solid border-[#0F1BB2] rounded-md'>
                 <div>
                     <FcCurrencyExchange className='text-6xl'></FcCurrencyExchange>
                 </div>
