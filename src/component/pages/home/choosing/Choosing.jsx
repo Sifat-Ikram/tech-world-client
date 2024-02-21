@@ -6,7 +6,7 @@ const Choosing = () => {
         <div>
             <div className="flex flex-col items-center gap-10 px-10 py-5 lg:flex-row lg:justify-between">
                 <figure>
-                    <img src="https://i.ibb.co/gT3MKKG/shutterstock-1798672534.jpg" className="rounded-lg shadow-2xl" />
+                    <img src="https://i.ibb.co/gT3MKKG/shutterstock-1798672534.jpg" className="rounded-lg" />
                 </figure>
                 <div className="w-3/5 space-y-5">
                     <h1 className="text-5xl font-bold text-center">Who are we?</h1>

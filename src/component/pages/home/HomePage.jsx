@@ -5,6 +5,7 @@ import Product from "./product/Product";
 import JoinUs from "./join/JoinUs"
 import TopBrands from "./Brands/TopBrands";
 import Review from "./review/Review";
+import News from "./news/News";
 
 const HomePage = () => {
     return (
@@ -16,6 +17,7 @@ const HomePage = () => {
             <ChooseUs />
             <JoinUs />
             <Review />
+            <News />
         </div>
     );
 };

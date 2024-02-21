@@ -47,7 +47,7 @@ const MyCart = () => {
                 <h1 className='text-6xl text-center uppercase text-extrabold'>My Cart</h1>
             </div>
             <div className='p-2 mt-10'>
-                <div className="mt-3 overflow-x-auto">
+                <div className="mt-3 overflow-x-auto border-2 border-solid shadow-2xl">
                     <table className="table">
                         <thead className='bg-[#0845F4] rounded-lg'>
                             <tr>

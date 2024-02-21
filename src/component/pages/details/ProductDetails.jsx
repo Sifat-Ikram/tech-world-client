@@ -87,7 +87,7 @@ const TestDetails = () => {
                 <h1 className="text-lg font-medium">Product Rating: {rating}</h1>
                 <h1 className="text-lg font-medium">Price: {price}</h1>
                 <h1 className="text-base"><span className="text-2xl font-medium">Description: </span>{details}</h1>
-                <div className='flex'>
+                <div className='flex justify-center'>
                     <button onClick={handleApply} className="all-btn">Add to Cart</button>
                 </div>
             </div>

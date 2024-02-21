@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import join from '../../../../assets/join.jpg'
 
 
 const Choosing = () => {
@@ -7,7 +6,7 @@ const Choosing = () => {
         <div>
             <div className="flex flex-col items-center gap-10 px-10 py-5 lg:flex-row lg:justify-between">
                 <figure>
-                    <img src={join} className="rounded-lg shadow-2xl" />
+                    <img src="https://i.ibb.co/gtvT95S/Consumer-Electronics.jpg" className="rounded-lg shadow-2xl" />
                 </figure>
                 <div className="w-3/5 space-y-5">
                     <h1 className="text-5xl font-bold text-center uppercase">Join Us</h1>
