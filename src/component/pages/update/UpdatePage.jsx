@@ -60,18 +60,18 @@ const UpdatePage = () => {
                         </div>
                         <div className="w-full shadow-2xl card shrink-0">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                                <div className="form-control w-3/5 mx-auto">
+                                <div className="w-3/5 mx-auto form-control">
                                     <label className="label">
                                         <span className="label-text">Image</span>
                                     </label>
-                                    <input {...register("image")} type="file" className="file-input file-input-bordered w-full max-w-lg" />
+                                    <input {...register("image")} type="file" className="w-full max-w-lg file-input file-input-bordered" />
                                 </div>
                                 <div className='lg:flex lg:justify-evenly'>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Full Name</span>
                                         </label>
-                                        <input type="text" defaultValue={name} {...register("name")} placeholder="Full Name" className="input input-bordered" />
+                                        <input type="text" defaultValue={name} {...register("name")} className="input input-bordered" />
                                     </div>
                                 </div>
                                 <div className='lg:flex lg:justify-evenly'>
@@ -79,13 +79,13 @@ const UpdatePage = () => {
                                         <label className="label">
                                             <span className="label-text">Product Type</span>
                                         </label>
-                                        <input type="text" defaultValue={type} {...register("type")} placeholder="Enter Division" className="input input-bordered" />
+                                        <input type="text" defaultValue={type} {...register("type")} className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Product Price</span>
                                         </label>
-                                        <input type="text" defaultValue={price} {...register("price")} placeholder="district" className="input input-bordered" />
+                                        <input type="text" defaultValue={price} {...register("price")} className="input input-bordered" />
                                     </div>
                                 </div>
                                 <div className='lg:flex lg:justify-evenly'>
@@ -93,7 +93,7 @@ const UpdatePage = () => {
                                         <label className="label">
                                             <span className="label-text">Rating</span>
                                         </label>
-                                        <input type="text" defaultValue={rating} {...register("rating")} placeholder="Type the names of places" className="input input-bordered" />
+                                        <input type="text" defaultValue={rating} {...register("rating")} className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
@@ -102,11 +102,11 @@ const UpdatePage = () => {
                                         <input defaultValue={brand} {...register("brand")} type="text" className="input input-bordered" />
                                     </div>
                                 </div>
-                                <div className="form-control w-4/5 mx-auto">
+                                <div className="w-4/5 mx-auto form-control">
                                     <label className="label">
                                         <span className="label-text">Tour Description</span>
                                     </label>
-                                    <textarea defaultValue={details} {...register("details")} className="textarea textarea-bordered" placeholder="Tour Description"></textarea>
+                                    <textarea defaultValue={details} {...register("details")} className="textarea textarea-bordered" ></textarea>
                                 </div>
                                 <div className="mt-6 form-control">
                                     <button className="all-btn">Update Product</button>

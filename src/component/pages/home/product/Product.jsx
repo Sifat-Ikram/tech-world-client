@@ -25,7 +25,7 @@ const Product = () => {
             <h1 className='my-10 text-4xl font-bold'>Featured Products</h1>
             <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4'>
                 {
-                    products.slice(0, 8).map(product => <div key={product.id} className="shadow-xl card card-compact bg-base-200">
+                    products.map(product => <div key={product.id} className="shadow-xl card card-compact bg-base-200">
                         <figure><img src={product.image} className="h-40" alt={product.name} /></figure>
                         <div className="flex flex-col items-center card-body">
                             <h1 className="card-title">{product.name}</h1>

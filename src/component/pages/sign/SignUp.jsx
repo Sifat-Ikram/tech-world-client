@@ -6,6 +6,10 @@ import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import axios from 'axios';
+
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const SignUp = () => {
     const { createUser, googleRegister } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
@@ -14,10 +18,10 @@ const SignUp = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const handleGoogleRegister = () => {
+    const handleGoogleRegister = async() => {
         googleRegister()
             .then(res => {
-                console.log(res);
+
                 const userInfo = {
                     email: res.user?.email,
                     name: res.user?.displayName
@@ -31,8 +35,14 @@ const SignUp = () => {
             .catch(err => console.error(err.message))
     }
 
-    const onSubmit = (data) => {
-
+    const onSubmit = async (data) => {
+        const imageFile = { image: data.image[0] }
+                const resImage = await axios.post(image_hosting_api, imageFile, {
+                    headers: {
+                        'content-type': 'multipart/form-data'
+                    }
+                });
+                if (resImage.data.data.display_url) {
 
         const regex = /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (data.password.length < 6) {
@@ -46,41 +56,42 @@ const SignUp = () => {
 
         createUser(data.email, data.password)
             .then(res => {
-
-                setSuccess('');
-                updateProfile(res.user, {
-                    displayName: data.name,
-                    photoUrl: data.photo
-                })
-                    .then(() => {
-                        console.log('Profile updated');
+                
+                    setSuccess('');
+                    updateProfile(res.user, {
+                        displayName: data.name,
+                        photoUrl: resImage.data.data.display_url
                     })
-                    .catch(err => {
-                        console.error(err.message);
-                    })
+                        .then(() => {
+                            console.log('Profile updated');
+                        })
+                        .catch(err => {
+                            console.error(err.message);
+                        })
 
 
-                const userInfo = {
-                    name: data.name,
-                    email: data.email,
-                    photoUrl: data.photo
-                }
-                axios.post('http://localhost:4321/user', userInfo)
-                    .then(res => {
-                        if (res.data.insertedId) {
-                            Swal.fire("You signed up successfully!");
-                            navigate(location?.state ? location.state : '/');
-                        }
-                        else {
-                            Swal.fire("Your signed up failed!");
-                        }
-                    })
+                    const userInfo = {
+                        name: data.name,
+                        email: data.email,
+                        photoUrl: resImage.data.data.display_url
+                    }
+                    axios.post('http://localhost:4321/user', userInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                Swal.fire("You signed up successfully!");
+                                navigate(location?.state ? location.state : '/');
+                            }
+                            else {
+                                Swal.fire("Your signed up failed!");
+                            }
+                        })
 
             })
             .catch(err => {
                 console.error(err);
                 setError(err.message);
             })
+        }
     }
 
     return (
@@ -98,11 +109,11 @@ const SignUp = () => {
                                 </label>
                                 <input name='name' {...register("name")} type="text" placeholder="Type your name here" className="w-full input input-bordered" />
                             </div>
-                            <div>
+                            <div className="w-3/5 mx-auto form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo Url</span>
+                                    <span className="label-text">Image</span>
                                 </label>
-                                <input name='photo' {...register("photo")} type="text" placeholder="give your photo url here" className="w-full input input-bordered" />
+                                <input {...register("image")} type="file" className="w-full max-w-lg file-input file-input-bordered" />
                             </div>
                             <div>
                                 <label className="label">
@@ -117,7 +128,7 @@ const SignUp = () => {
                                 <input name='password' {...register("password")} type="password" placeholder="password" className="w-full input input-bordered" required />
                             </div>
                             <div>
-                                <button type='submit' className='all-btn w-full'>Sign up</button>
+                                <button type='submit' className='w-full all-btn'>Sign up</button>
                             </div>
                             <h1>Already have an account? <a className='text-blue-700' href='/signIn'>Sign in</a> here</h1>
                             {
