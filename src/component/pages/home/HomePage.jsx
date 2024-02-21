@@ -2,7 +2,7 @@ import Banner from "./banner/Banner";
 import ChooseUs from "./choose_us/ChooseUs";
 import Choosing from "./choosing/Choosing";
 import Product from "./product/Product";
-
+import JoinUs from "./join/JoinUs"
 
 const HomePage = () => {
     return (
@@ -11,6 +11,7 @@ const HomePage = () => {
             <Product />
             <Choosing />
             <ChooseUs />
+            <JoinUs />
         </div>
     );
 };

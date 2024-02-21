@@ -13,9 +13,11 @@ const Choosing = () => {
                     <p>
                         Tech World is a leading technology company specializing in innovative solutions across various sectors. With a focus on cutting-edge research and development, Tech World delivers products and services that revolutionize industries. From software development and artificial intelligence to hardware solutions and cybersecurity, Tech World is at the forefront of technological advancement. With a commitment to excellence and customer satisfaction, Tech World continues to shape the future of technology on a global scale.
                     </p>
-                    <Link to={"/about"}>
-                        <button className='all-btn mt-3'>About Us</button>
-                    </Link>
+                    <div className="flex justify-center">
+                        <Link to={"/about"}>
+                            <button className='all-btn mt-3'>About Us</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
