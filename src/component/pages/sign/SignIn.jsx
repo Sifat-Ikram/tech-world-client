@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
+import axios from 'axios';
 // import axios from 'axios';
 
 const SignIn = () => {
@@ -11,22 +12,28 @@ const SignIn = () => {
     const { register, handleSubmit } = useForm();
     const location = useLocation();
     const navigate = useNavigate();
-    // const [success, setSuccess] = useState('');
+    const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
 
     const handleGoogleRegister = () => {
         googleRegister()
             .then(res => {
                 console.log(res);
-                // const userInfo = {
-                //     email: res.user?.email,
-                //     name: res.user?.displayName
-                // }
-                // axios.post('http://localhost:4321/user', userInfo)
-                //     .then(res => {
-                        
-                //         navigate(location?.state ? location.state : '/')
-                //     })
+                const userInfo = {
+                    email: res.user?.email,
+                    name: res.user?.displayName
+                }
+                axios.post('https://tech-world-server-three.vercel.app/user', userInfo)
+                    .then(res => {
+                        console.log(res.user);
+                        Swal.fire({
+                            position: "top-end",
+                            title: "You signed up successfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        navigate(location?.state ? location.state : '/')
+                    })
             })
             .catch(err => console.error(err.message))
     }
@@ -41,9 +48,9 @@ const SignIn = () => {
                     title: "You signed up successfully",
                     showConfirmButton: false,
                     timer: 1500
-                  });
+                });
                 navigate(location?.state ? location.state : '/')
-                // setSuccess('');            
+                setSuccess('');
             })
             .catch(err => {
                 console.error(err.message);
@@ -80,7 +87,7 @@ const SignIn = () => {
                                     error && <p>{error}</p>
                                 }
                             </div>
-                            <h1>Don't have an account yet, <a className='text-blue-700' href='/signUp'>Sign up</a> here</h1>
+                            <h1>Do not have an account yet, <a className='text-blue-700' href='/signUp'>Sign up</a> here</h1>
                         </form>
                         <div className='flex justify-center items-center mt-5'>
                             <button onClick={handleGoogleRegister} className='w-4/5 mx-auto btn btn-outline hover:text-white border-[#0F1BB2] hover:bg-[#0F1BB2]'><FaGoogle></FaGoogle> Sign in</button>

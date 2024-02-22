@@ -26,7 +26,7 @@ const SignUp = () => {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
-                axios.post('http://localhost:4321/user', userInfo)
+                axios.post('https://tech-world-server-three.vercel.app/user', userInfo)
                     .then(res => {
                         console.log(res.user);
                         navigate(location?.state ? location.state : '/')
@@ -75,7 +75,7 @@ const SignUp = () => {
                         email: data.email,
                         photoUrl: resImage.data.data.display_url
                     }
-                    axios.post('http://localhost:4321/user', userInfo)
+                    axios.post('https://tech-world-server-three.vercel.app/user', userInfo)
                         .then(res => {
                             if (res.data.insertedId) {
                                 Swal.fire("You signed up successfully!");
